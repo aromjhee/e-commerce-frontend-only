@@ -1,6 +1,8 @@
 import { PRODUCT_LIST_FAIL, PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_DETAILS_FAIL, PRODUCT_SAVE_REQUEST, PRODUCT_SAVE_SUCCESS, PRODUCT_SAVE_FAIL, PRODUCT_DELETE_REQUEST, PRODUCT_DELETE_SUCCESS, PRODUCT_DELETE_FAIL } from "../constant/productConstants.js";
 
+// let url = 'http://localhost:8080';
 let url;
+console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'development') {
   url = 'http://localhost:8080';
 } else {

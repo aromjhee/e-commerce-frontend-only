@@ -1,6 +1,7 @@
 import { CART_ADD_ITEM, CART_ADD_ITEM_FAIL, CART_REMOVE_ITEM, CART_SAVE_SHIPPING, CART_SAVE_PAYMENT } from "../constant/cartConstants";
 import Cookie from 'js-cookie';
 
+// let url = 'http://localhost:8080';
 let url;
 if (process.env.NODE_ENV === 'development') {
   url = 'http://localhost:8080';

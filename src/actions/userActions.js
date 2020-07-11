@@ -1,6 +1,7 @@
 import Cookie from 'js-cookie';
 import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGIN_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_REGISTER_FAIL, USER_LOGOUT_SUCCESS } from '../constant/userConstants';
 
+// let url = 'http://localhost:8080';
 let url;
 if (process.env.NODE_ENV === 'development') {
   url = 'http://localhost:8080';
