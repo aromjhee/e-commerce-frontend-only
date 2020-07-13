@@ -37,7 +37,7 @@ imma-Zone is an e-commerce clone.
 ![screenshot1](public/images/screenshot1.jpg)
 - Sidebar menu to navigate between categories
 - Unit tests
-![unit-tests]()
+![unit-tests](public/images/screenshot2.jpg)
 
 # Future Implementation
 - Search bar
@@ -47,5 +47,5 @@ imma-Zone is an e-commerce clone.
 - Profile page detailing user info
 - Edit user info
 - Landing page
-- Shopping cart badge icon indicating number of producgts
+- Shopping cart badge icon indicating number of products
 - Profile page displaying purchase orders

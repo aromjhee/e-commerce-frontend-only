@@ -2,7 +2,6 @@ import { PRODUCT_LIST_FAIL, PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_
 
 // let url = 'http://localhost:8080';
 let url;
-console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'development') {
   url = 'http://localhost:8080';
 } else {

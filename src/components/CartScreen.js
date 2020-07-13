@@ -8,7 +8,10 @@ const CartScreen = props => {
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart;
 
-  const { id } = useParams();
+  // couldn't get test to pass
+  // when using useParams from react-router-dom
+  // const { id } = useParams();
+  const id = props.match.params.id;
   const qty = props.location.search ? Number(props.location.search.split('=')[1]) : 1;
   const dispatch = useDispatch();
 
