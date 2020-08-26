@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { saveProduct, listProducts, deleteProduct } from '../actions/productActions';
 
-const NewProductScreen = () => {
+const CRUDProduct = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [id, setId] = useState('');
   const [name, setName] = useState('');
@@ -58,9 +58,8 @@ const NewProductScreen = () => {
 
   return (
     <>
-      <div className='content content-margined'>
+      <div className='text-gray-800 m-1'>
         <div className='product-header'>
-          <h3>Products</h3>
           <button 
             onClick={() => openModal({})}
             className='button primary'>Create Product</button>
@@ -155,36 +154,36 @@ const NewProductScreen = () => {
             </form>
           </div>
         }        
-        <div className='product-list'>
-          <table className='table'>
-            <thead>
+        <div className='text-gray-800 rounded border-b border-gray-200 mb-56'>
+          <table className='w-screen'>
+            <thead className='bg-gray-800 text-white'>
               <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Category</th>
-                <th>Brand</th>
-                <th>Action</th>
+                <th className='text-left py-3 px-4 font-semibold text-sm'>ID</th>
+                <th className='text-left py-3 px-4 font-semibold text-sm'>Name</th>
+                <th className='text-left py-3 px-4 font-semibold text-sm'>Price</th>
+                <th className='text-left py-3 px-4 font-semibold text-sm'>Category</th>
+                <th className='text-left py-3 px-4 font-semibold text-sm'>Brand</th>
+                <th className='text-left py-3 px-4 font-semibold text-sm'>Action</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className='text-gray-700'>
               {products.map(product => (
               <tr key={product._id}>
-                <td>{product._id}</td>
-                <td>{product.name}</td>
-                <td>{product.price}</td>
-                <td>{product.category}</td>
-                <td>{product.brand}</td>
-                <td>
+                <td className='text-left py-3 px-4'>{product._id}</td>
+                <td className='text-left py-3 px-4'>{product.name}</td>
+                <td className='text-left py-3 px-4'>{product.price}</td>
+                <td className='text-left py-3 px-4'>{product.category}</td>
+                <td className='text-left py-3 px-4'>{product.brand}</td>
+                <td className='text-left py-3 px-4'>
                   <button 
                     onClick={() => openModal(product)}
-                    className='button'>
+                    className='text-white bg-orange-500 p-4 py-1 text-sm rounded mr-2 font-semibold'>
                       Edit
                   </button>
                   {' '}
                   <button 
                     onClick={() => deleteHandler(product)}
-                    className='button'>
+                    className='text-white bg-red-500 px-4 py-1 text-sm rounded mx-2 font-semibold'>
                       Delete
                   </button>
                 </td>
@@ -198,4 +197,4 @@ const NewProductScreen = () => {
   )
 }
 
-export default NewProductScreen;
+export default CRUDProduct;

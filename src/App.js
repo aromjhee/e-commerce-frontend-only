@@ -9,7 +9,7 @@ import ProductDetail from './components/ProductDetail';
 import CartScreen from './components/CartScreen';
 import LoginScreen from './components/LogInScreen';
 import RegisterScreen from './components/RegisterScreen';
-import NewProductScreen from './components/NewProductScreen';
+import CRUDProduct from './components/CRUDProduct';
 import ShippingScreen from './components/ShippingScreen';
 import PaymentScreen from './components/PaymentScreen';
 import PlaceOrderScreen from './components/PlaceOrderScreen';
@@ -22,7 +22,7 @@ const App = () => {
         <NavBar />
         <div className="row-start-2 row-span-1">
           <Route exact path='/' component={Products}></Route>
-          <Route path='/products' component={NewProductScreen}></Route>
+          <Route path='/products' component={CRUDProduct}></Route>
           <Route path="/profile" component={ProfileScreen} />
           <Route path='/shipping' component={ShippingScreen}></Route>
           <Route path='/payment' component={PaymentScreen}></Route>
