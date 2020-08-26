@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
 import 'font-awesome/css/font-awesome.min.css';
 
+import NavBar from './components/NavBar';
 import HomeScreen from './components/HomeScreen';
 import ProductScreen from './components/ProductScreen';
 import CartScreen from './components/CartScreen';
@@ -15,30 +15,10 @@ import PlaceOrderScreen from './components/PlaceOrderScreen';
 import ProfileScreen from './components/ProfileScreen';
 
 const App = () => {
-  const userLogin = useSelector(state => state.userLogin);
-  const { userInfo } = userLogin;
-
   return (
     <BrowserRouter>
-      <div className="grid-container">
-        <header className="header">
-          <div className="brand">
-            <Link to='/'>imma-Zone</Link>
-          </div>
-          <div className="header-links">
-            {
-              userInfo && userInfo.isAdmin ?
-              <Link to='/products'>Create</Link> :
-              null
-            }
-            <Link to='/cart/:id?'>Cart</Link>
-            {
-              userInfo ? 
-              <Link to='/profile'>{userInfo.name}</Link> :
-              <Link to='/log-in'>Log In</Link>
-            }
-          </div>
-        </header>
+      <div className="grid grid-cols-3 grid-rows-6 app-bg-color app-font-color text-lg">
+        <NavBar />
         <main className="main">
           <div className="content">
             <Route exact path='/' component={HomeScreen}></Route>
