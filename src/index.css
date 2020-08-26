@@ -13,3 +13,14 @@
 .link-hover-color:hover {
   color: #f69e7b;
 }
+
+.product-image {
+  max-width: 25rem;
+  max-height: 25rem;
+  border-radius: 10px;
+  transition: transform .2s;
+}
+
+.product-image:hover {
+  transform: scale(1.04);
+}

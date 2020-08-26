@@ -7,7 +7,7 @@ const NavBar = () => {
   const { userInfo } = userLogin;
   
   return (
-    <div className='col-start-1 col-span-3 row-start-1 row-span-1 navbar-bg-color h-12'>
+    <div className='col-start-1 col-span-1 row-start-1 row-span-1 navbar-bg-color h-12'>
       <div className='flex h-full w-full justify-between items-center p-4'>
         <div className='link-hover-color text-2xl'>
           <Link to='/'>imma-Zone</Link>
