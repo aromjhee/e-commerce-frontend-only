@@ -22,5 +22,11 @@
 }
 
 .product-image:hover {
-  transform: scale(1.04);
+  transform: scale(1.02);
+}
+
+.product-detail-image {
+  max-width: 50vw;
+  max-height: 50vh;
+  border-radius: 15px;
 }
