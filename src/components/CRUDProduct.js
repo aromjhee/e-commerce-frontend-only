@@ -62,97 +62,95 @@ const CRUDProduct = () => {
         <div className='product-header'>
           <button 
             onClick={() => openModal({})}
-            className='button primary'>Create Product</button>
+            className='text-white bg-red-500 p-4 text-lg rounded-lg mb-4 font-semibold'>Create Product</button>
         </div>
         {modalVisible && 
-          <div className='form'>
-            <form onSubmit={submitHandler}>
-              <ul className='form-container'>
-                <li>
-                  <h2>Create Product</h2>
-                </li>
-                <li>
-                  {loadingSave && <div>Loading...</div>}
-                  {errorSave && <div>{errorSave}</div>}
-                </li>
-                <li>
-                  <label htmlFor='name'>Name</label>
-                  <input
-                    type='text'
-                    name='name'
-                    id='name'
-                    value={name}
-                    onChange={e => setName(e.target.value)} />
-                </li>
-                <li>
-                  <label htmlFor='price'>Price</label>
-                  <input
-                    type='number'
-                    name='price'
-                    id='price'
-                    value={price}
-                    onChange={e => setPrice(e.target.value)} />
-                </li>
-                <li>
-                  <label htmlFor='image'>Image</label>
-                  <input
-                    type='text'
-                    name='image'
-                    id='image'
-                    value={image}
-                    onChange={e => setImage(e.target.value)} />
-                </li>
-                <li>
-                  <label htmlFor='brand'>Brand</label>
-                  <input
-                    type='text'
-                    name='brand'
-                    id='brand'
-                    value={brand}
-                    onChange={e => setBrand(e.target.value)} />
-                </li>
-                <li>
-                  <label htmlFor='category'>Category</label>
-                  <input
-                    type='text'
-                    name='category'
-                    id='category'
-                    value={category}
-                    onChange={e => setCategory(e.target.value)} />
-                </li>
-                <li>
-                  <label htmlFor='countInStock'>Count-In-Stock</label>
-                  <input
-                    type='number'
-                    name='countInStock'
-                    id='countInStock'
-                    value={countInStock}
-                    onChange={e => setCountInStock(e.target.value)} />
-                </li>
-                <li>
-                  <label htmlFor='description'>Description</label>
-                  <textarea
-                    name='description'
-                    id='description'
-                    value={description}
-                    onChange={e => setDescription(e.target.value)} />
-                </li>
-                <li>
-                  <button
-                    type='submit'
-                    className='button primary full-width'>
-                      {id ? 'Update' : 'Create'}
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type='button'
-                    className='button secondary'
-                    onClick={() => setModalVisible(false)}>Cancel</button>
-                </li>
-              </ul>
-            </form>
-          </div>
+          <form onSubmit={submitHandler} className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
+            <div className='flex items-center'>
+              {loadingSave && <div>Loading...</div>}
+              {errorSave && <div>{errorSave}</div>}
+            </div>
+            <div className='mb-4'>
+              <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='name'>Name</label>
+              <input 
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                type="text" 
+                name='name' 
+                id='name' 
+                value={name} 
+                onChange={e => setName(e.target.value)}></input>
+            </div>
+            <div className='mb-4'>
+              <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='price'>Price</label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type='number'
+                name='price'
+                id='price'
+                value={price}
+                onChange={e => setPrice(e.target.value)} />
+            </div>
+            <div className='mb-4'>
+              <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='image'>Image</label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type='text'
+                name='image'
+                id='image'
+                value={image}
+                onChange={e => setImage(e.target.value)} />
+            </div>
+            <div className='mb-4'>
+              <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='brand'>Brand</label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type='text'
+                name='brand'
+                id='brand'
+                value={brand}
+                onChange={e => setBrand(e.target.value)} />
+            </div>
+            <div className='mb-4'>
+              <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='category'>Category</label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type='text'
+                name='category'
+                id='category'
+                value={category}
+                onChange={e => setCategory(e.target.value)} />
+            </div>
+            <div className='mb-4'>
+              <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='countInStock'>Count-In-Stock</label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type='number'
+                name='countInStock'
+                id='countInStock'
+                value={countInStock}
+                onChange={e => setCountInStock(e.target.value)} />
+            </div>
+            <div className='mb-4'>
+              <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='description'>Description</label>
+              <textarea
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                name='description'
+                id='description'
+                value={description}
+                onChange={e => setDescription(e.target.value)} />
+            </div>
+            <div className='flex'>
+              <button
+                type='submit'
+                className='text-white bg-orange-500 p-4 py-1 text-sm rounded mr-2 font-semibold'>
+                  {id ? 'Update' : 'Create'}
+              </button>
+              <button
+                type='button'
+                className='text-white bg-red-500 px-4 py-1 text-sm rounded mx-2 font-semibold'
+                onClick={() => setModalVisible(false)}>Cancel</button>
+            </div>
+          </form>
         }        
         <div className='text-gray-800 rounded border-b border-gray-200 mb-56'>
           <table className='w-screen'>
