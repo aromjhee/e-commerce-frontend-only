@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { listProducts } from '../actions/productActions';
+import Rating from '@material-ui/lab/Rating';
 
 const Products = () => {
   const productList = useSelector(state => state.productList);
@@ -33,40 +34,13 @@ const Products = () => {
               <Link to={`/product/${product._id}`}>{product.name}</Link>
             </div>
             <div className='text-base text-gray-600 font-thin'>{product.brand}</div>
-            <div className='product-price'>${product.price}</div>
-            <div className='product-rating'>{product.rating} Stars ({product.numReviews} Reviews)</div>
+            <div>${product.price}</div>
+            <Rating name="disabled" value={product.rating} disabled />
           </div>
         ))}
       </div>
     )
   )
-  // return (
-  //   loading ? <div>Loading...</div> :
-  //   error ? <div>{error}</div> :
-  //   (
-  //     <div className='col-span-1 row-span-1'>
-  //       <ul className="products">
-  //         {products.map(product => (
-  //             <li key={product._id}>
-  //               <div className="product">
-  //                 <div className='product-image-div'>
-  //                   <Link to={`/product/${product._id}`}>
-  //                     <img className="product-image" src={product.image} alt={product._id} />
-  //                   </Link>
-  //                 </div>
-  //                 <div className="product-name">
-  //                   <Link to={`/product/${product._id}`}>{product.name}</Link>
-  //                 </div>
-  //                 <div className="product-brand">{product.brand}</div>
-  //                 <div className="product-price">${product.price}</div>
-  //                 <div className="product-rating">{product.rating} Stars ({product.numReviews} Reviews)</div>
-  //               </div>
-  //             </li>
-  //         ))}
-  //       </ul>
-  //     </div>
-  //   )
-  // )
 }
 
 export default Products;
