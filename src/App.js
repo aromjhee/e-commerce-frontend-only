@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import 'font-awesome/css/font-awesome.min.css';
 
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import HomeScreen from './components/HomeScreen';
 import ProductScreen from './components/ProductScreen';
 import CartScreen from './components/CartScreen';
@@ -39,11 +40,7 @@ const App = () => {
             <Route path='/product/:id' component={ProductScreen}></Route>
           </div>
         </main>
-        <footer className="footer">
-          <span>
-            <a href='https://github.com/aromjhee'>Github<i className="fa fa-github fa-2x" aria-hidden="true"></i></a>
-          </span>
-        </footer>
+        <Footer />
       </div>
     </BrowserRouter>
   )
