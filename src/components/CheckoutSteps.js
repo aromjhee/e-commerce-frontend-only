@@ -2,11 +2,11 @@ import React from 'react';
 
 const CheckoutSteps = props => {
   return (
-    <div className='checkout-steps'>
-      <div className={props.step1 ? 'active' : ''}>Log in</div>
-      <div className={props.step2 ? 'active' : ''}>Shipping</div>
-      <div className={props.step3 ? 'active' : ''}>Payment</div>
-      <div className={props.step4 ? 'active' : ''}>Place Order</div>
+    <div className='flex justify-around check-out-steps-width m-auto text-sm text-gray-700 mt-10'>
+      <div className={props.step1 ? 'pt-1 px-8 border-t-2 border-green-400' : 'pt-1 px-8 border-t-2 border-red-400'}>Log in</div>
+      <div className={props.step2 ? 'pt-1 px-8 border-t-2 border-green-400' : 'pt-1 px-8 border-t-2 border-red-400'}>Shipping</div>
+      <div className={props.step3 ? 'pt-1 px-8 border-t-2 border-green-400' : 'pt-1 px-8 border-t-2 border-red-400'}>Payment</div>
+      <div className={props.step4 ? 'pt-1 px-8 border-t-2 border-green-400' : 'pt-1 px-8 border-t-2 border-red-400'}>Place Order</div>
     </div>
   )
 }
