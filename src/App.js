@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import Products from './components/Products';
 import ProductDetail from './components/ProductDetail';
 import Cart from './components/Cart';
-import LoginScreen from './components/LogInScreen';
+import LogIn from './components/LogIn';
 import RegisterScreen from './components/RegisterScreen';
 import CRUDProduct from './components/CRUDProduct';
 import ShippingAddress from './components/ShippingAddress';
@@ -27,7 +27,7 @@ const App = () => {
           <Route path='/shipping' component={ShippingAddress}></Route>
           <Route path='/payment' component={Payment}></Route>
           <Route path='/place-order' component={OrderPlacement}></Route>
-          <Route path="/log-in" component={LoginScreen} />
+          <Route path="/log-in" component={LogIn} />
           {/* <Route 
             path="/register"
             render={
