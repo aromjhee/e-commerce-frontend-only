@@ -4,9 +4,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import ProductScreen from '../components/ProductScreen';
+import ProductDetail from '../components/ProductDetail';
 
-describe('ProductScreen component', () => {
+describe('ProductDetail component', () => {
   beforeEach(() => {
     const spy = jest.spyOn(redux, 'useSelector')
     spy.mockReturnValue({
@@ -29,12 +29,12 @@ describe('ProductScreen component', () => {
 
     render(
       <BrowserRouter>
-        <ProductScreen {...props} />
+        <ProductDetail {...props} />
       </BrowserRouter>
     );
   });
 
-  it(`renders ProductScreen component`, () => {
+  it(`renders ProductDetail component`, () => {
     // testing beforeEach hook
   });
 

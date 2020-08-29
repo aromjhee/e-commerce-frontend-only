@@ -6,7 +6,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Products from './components/Products';
 import ProductDetail from './components/ProductDetail';
-import CartScreen from './components/CartScreen';
+import Cart from './components/Cart';
 import LoginScreen from './components/LogInScreen';
 import RegisterScreen from './components/RegisterScreen';
 import CRUDProduct from './components/CRUDProduct';
@@ -35,7 +35,7 @@ const App = () => {
             } 
           /> */}
           <Route path='/register' component={RegisterScreen}></Route>
-          <Route path='/cart/:id?' component={CartScreen}></Route>
+          <Route path='/cart/:id?' component={Cart}></Route>
           <Route path='/product/:id' component={ProductDetail}></Route>
         </div>
         <Footer />

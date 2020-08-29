@@ -6,7 +6,7 @@ import Rating from '@material-ui/lab/Rating';
 import { detailsProducts } from '../actions/productActions';
 
 const ProductDetail = props => {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
 
   const productDetails = useSelector(state => state.productDetails);
   const { product, loading, error } = productDetails;
@@ -72,7 +72,7 @@ const ProductDetail = props => {
               </div>
               <div className=''>
                 {product.countInStock > 0 &&
-                  (<button onClick={handleAddToCart} className='bg-blue-800 hover:bg-blue-200 text-white font-bold py-2 px-4 rounded-lg w-48 text-center'>Add to Cart</button>)
+                  (<button onClick={handleAddToCart} className='bg-blue-800 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-lg w-48 text-center'>Add to Cart</button>)
                 }
               </div>
             </div>
