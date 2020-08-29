@@ -13,17 +13,17 @@ import CRUDProduct from './components/CRUDProduct';
 import ShippingAddress from './components/ShippingAddress';
 import Payment from './components/Payment';
 import OrderPlacement from './components/OrderPlacement';
-import ProfileScreen from './components/ProfileScreen';
+import UserProfile from './components/UserProfile';
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="grid gap-4 app-bg-color app-font-color text-lg">
         <NavBar />
-        <div className="row-start-2 row-span-1">
+        <div className="row-start-2 row-span-1 h-screen">
           <Route exact path='/' component={Products}></Route>
           <Route path='/products' component={CRUDProduct}></Route>
-          <Route path="/profile" component={ProfileScreen} />
+          <Route path="/profile" component={UserProfile} />
           <Route path='/shipping' component={ShippingAddress}></Route>
           <Route path='/payment' component={Payment}></Route>
           <Route path='/place-order' component={OrderPlacement}></Route>

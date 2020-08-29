@@ -5,9 +5,9 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { within } from '@testing-library/dom'
 
-import CartScreen from '../components/CartScreen';
+import Cart from '../components/Cart';
 
-describe('CartScreen component', () => {
+describe('Cart component', () => {
   beforeEach(() => {
     const spy = jest.spyOn(redux, 'useSelector');
     spy.mockReturnValue({
@@ -28,12 +28,12 @@ describe('CartScreen component', () => {
 
     render(
       <BrowserRouter>
-        <CartScreen {...props} />
+        <Cart {...props} />
       </BrowserRouter>
     );
   });
 
-  it(`renders CartScreen component`, () => {
+  it(`renders Cart component`, () => {
     // testing beforeEach hook
   });
 
@@ -86,7 +86,7 @@ describe('CartScreen component', () => {
 
     render(
       <BrowserRouter>
-        <CartScreen {...props} />
+        <Cart {...props} />
       </BrowserRouter>
     );
     expect(screen.getByText(/Cart is Empty/)).toBeInTheDocument();

@@ -3,19 +3,19 @@ import * as redux from 'react-redux'
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import ProfileScreen from '../components/ProfileScreen';
+import UserProfile from '../components/UserProfile';
 
-describe('ProfileScreen component', () => {
+describe('UserProfile component', () => {
   beforeEach(() => {
     const useDispatchSpy = jest.spyOn(redux, 'useDispatch');
     const mockDispatchFn = jest.fn();
     useDispatchSpy.mockReturnValue(mockDispatchFn);
     const props = { history: [] };
 
-    render(<ProfileScreen {...props} />);
+    render(<UserProfile {...props} />);
   });
 
-  it('renders ProfileScreen component', () => {
+  it('renders UserProfile component', () => {
     // testing beforeEach hook
   });
 

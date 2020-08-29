@@ -5,9 +5,9 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { within } from '@testing-library/dom'
 
-import PlaceOrderScreen from '../components/PlaceOrderScreen';
+import OrderPlacement from '../components/OrderPlacement';
 
-describe('PlaceOrderScreen component', () => {
+describe('OrderPlacement component', () => {
   beforeEach(() => {
     const spy = jest.spyOn(redux, 'useSelector')
     spy.mockReturnValue({
@@ -24,10 +24,10 @@ describe('PlaceOrderScreen component', () => {
     })
     const props = { history: [] }
 
-    render(<PlaceOrderScreen {...props} />);
+    render(<OrderPlacement {...props} />);
   });
 
-  it(`renders PlaceOrderScreen component`, () => {
+  it(`renders OrderPlacement component`, () => {
     // testing beforeEach hook
   });
 
@@ -87,7 +87,7 @@ describe('PlaceOrderScreen component', () => {
 
     render(
       <BrowserRouter>
-        <PlaceOrderScreen {...props} />
+        <OrderPlacement {...props} />
       </BrowserRouter>
     );
 

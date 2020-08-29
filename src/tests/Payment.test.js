@@ -4,19 +4,19 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { within } from '@testing-library/dom'
 
-import PaymentScreen from '../components/PaymentScreen';
+import Payment from '../components/Payment';
 
-describe('PaymentScreen component', () => {
+describe('Payment component', () => {
   beforeEach(() => {
     const useDispatchSpy = jest.spyOn(redux, 'useDispatch');
     const mockDispatchFn = jest.fn();
     useDispatchSpy.mockReturnValue(mockDispatchFn);
     const props = { history: [] };
 
-    render(<PaymentScreen {...props} />);
+    render(<Payment {...props} />);
   });
 
-  it('renders PaymentScreen component', () => {
+  it('renders Payment component', () => {
     // testing beforeEach hook
   });
 
