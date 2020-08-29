@@ -10,7 +10,7 @@ import Cart from './components/Cart';
 import LoginScreen from './components/LogInScreen';
 import RegisterScreen from './components/RegisterScreen';
 import CRUDProduct from './components/CRUDProduct';
-import ShippingScreen from './components/ShippingScreen';
+import ShippingAddress from './components/ShippingAddress';
 import PaymentScreen from './components/PaymentScreen';
 import PlaceOrderScreen from './components/PlaceOrderScreen';
 import ProfileScreen from './components/ProfileScreen';
@@ -24,7 +24,7 @@ const App = () => {
           <Route exact path='/' component={Products}></Route>
           <Route path='/products' component={CRUDProduct}></Route>
           <Route path="/profile" component={ProfileScreen} />
-          <Route path='/shipping' component={ShippingScreen}></Route>
+          <Route path='/shipping' component={ShippingAddress}></Route>
           <Route path='/payment' component={PaymentScreen}></Route>
           <Route path='/place-order' component={PlaceOrderScreen}></Route>
           <Route path="/log-in" component={LoginScreen} />

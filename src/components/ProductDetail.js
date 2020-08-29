@@ -26,7 +26,7 @@ const ProductDetail = props => {
   return (
     <>
       <button className='bg-gray-400 hover:bg-gray-500 text-gray-700 font-bold py-2 px-4 rounded-lg ml-4 mb-10 inline-flex items-center text-sm'>
-        <Link to ='/'>Back to result</Link>
+        <Link to ='/'>Back to Products</Link>
       </button>
       {
         loading ? (
@@ -34,7 +34,7 @@ const ProductDetail = props => {
         ) : error ? (
           <div className='text-2xl flex h-full w-full text-black'>{error}</div>
         ) : (
-        <div className='p-4'>
+        <div className='p-4 h-screen'>
           <div className='grid grid-cols-4'>
             <img 
               className='product-detail-image col-start-1 col-span-3 mb-5 ml-24 shadow-2xl' 

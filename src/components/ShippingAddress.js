@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { saveShipping } from '../actions/cartActions';
 import CheckoutSteps from './CheckoutSteps';
 
-const ShippingScreen = props => {
+const ShippingAddress = props => {
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const [postalCode, setPostalCode] = useState('');
@@ -20,7 +20,7 @@ const ShippingScreen = props => {
   return (
     <>
       <CheckoutSteps step1 step2 />
-      <div className='form'>
+      <div className='h-screen text-gray-700'>
         <form onSubmit={submitHandler}>
           <ul className='form-container'>
             <li>
@@ -74,4 +74,4 @@ const ShippingScreen = props => {
   )
 }
 
-export default ShippingScreen;
+export default ShippingAddress;

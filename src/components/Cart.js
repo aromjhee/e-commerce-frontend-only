@@ -32,15 +32,23 @@ const Cart = props => {
   return (
     <div>
       <h3 className='text-3xl text-gray-700 mb-10 ml-10'>Shopping Cart</h3>
-      <div className='flex justify-between'>
+      <button className='bg-gray-400 hover:bg-gray-500 text-gray-700 font-bold py-2 px-4 rounded-lg ml-10 mb-10 inline-flex items-center text-sm'>
+        <Link to='/'>Continue Shopping</Link>
+      </button>
+      <div className='flex justify-between h-screen'>
         <div className='cart-list-container text-gray-700'>
           {
             cartItems.length === 0 ? (
               <div className='text-xl'>Cart is Empty</div>
             ) :
             cartItems.map(item => (
-              <div key={item.name} className='flex items-center'>
-                <img className='product-cart-image ml-10' src={item.image} alt='product' />
+              <div key={item.name} className='flex items-center border border-indigo-200 rounded-lg ml-10 mb-2 p-4 justify-around'>
+                <Link to={`/product/${item.product}`}>
+                  <img 
+                    className='product-cart-image ml-3 border border-purple-200' 
+                    src={item.image} 
+                    alt='product' />
+                </Link>
                 <div className='font-bold ml-4'>
                   <Link to={`/product/${item.product}`}>
                     {item.name}
@@ -57,7 +65,7 @@ const Cart = props => {
                   </select>
                 </div>
                 <div className='text-indigo-600 text-sm font-bold ml-20'>
-                  ${item.price}
+                  ${item.price} <span className='text-xs text-gray-500'>/item</span>
                 </div>
                 <button 
                   onClick={() => removeFromCartHandler(item.product)}
@@ -68,14 +76,14 @@ const Cart = props => {
             ))
           }
         </div>
-        <div className='text-gray-700 px-4 mr-10 flex flex-col items-center content-center justify-center border-4 rounded-lg border-indigo-200 p-5'>
+        <div className='text-gray-700 px-4 mr-20 flex flex-col items-center content-center justify-around border rounded-lg border-indigo-200 p-5 cart-checkout-box-height'>
           <h3 className=''>
             SubTotal ({cartItems.reduce((a, c) => a + Number(c.qty), 0)} items):
             ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
           </h3>
           <button 
             onClick={checkoutHandler} 
-            className='text-gray-900 bg-gray-500 hover:bg-gray-400 px-4 py-1 text-xl rounded-full font-semibold mt-4' 
+            className='text-gray-900 bg-gray-500 hover:bg-gray-400 px-4 py-1 text-xl rounded-full font-semibold mt-10' 
             disabled={cartItems.length === 0}>
               Proceed to Checkout
           </button>

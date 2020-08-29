@@ -36,3 +36,7 @@
   max-height: 10rem;
   border-radius: 15px;
 }
+
+.cart-checkout-box-height {
+  height: 200px;
+}
