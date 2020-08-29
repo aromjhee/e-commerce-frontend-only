@@ -36,7 +36,7 @@ const Cart = props => {
         <Link to='/'>Continue Shopping</Link>
       </button>
       <div className='flex justify-between h-screen'>
-        <div className='cart-list-container text-gray-700'>
+        <div className='text-gray-700'>
           {
             cartItems.length === 0 ? (
               <div className='text-xl'>Cart is Empty</div>

@@ -44,3 +44,12 @@
 .check-out-steps-width {
   width: 500px;
 }
+
+.order-placement-box-size {
+  height: 20rem;
+  width: 18rem;
+}
+
+.button-width-custom {
+  width: 15rem;
+}
