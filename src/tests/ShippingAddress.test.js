@@ -3,19 +3,19 @@ import * as redux from 'react-redux'
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import ShippingScreen from '../components/ShippingScreen';
+import ShippingAddress from '../components/ShippingAddress';
 
-describe('ShippingScreen component', () => {
+describe('ShippingAddress component', () => {
   beforeEach(() => {
     const useDispatchSpy = jest.spyOn(redux, 'useDispatch');
     const mockDispatchFn = jest.fn();
     useDispatchSpy.mockReturnValue(mockDispatchFn);
     const props = { history: [] };
 
-    render(<ShippingScreen {...props} />);
+    render(<ShippingAddress {...props} />);
   });
 
-  it('renders ShippingScreen component', () => {
+  it('renders ShippingAddress component', () => {
     // testing beforeEach hook
   });
 

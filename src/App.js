@@ -8,7 +8,7 @@ import Products from './components/Products';
 import ProductDetail from './components/ProductDetail';
 import Cart from './components/Cart';
 import LogIn from './components/LogIn';
-import RegisterScreen from './components/RegisterScreen';
+import UserRegister from './components/UserRegister';
 import CRUDProduct from './components/CRUDProduct';
 import ShippingAddress from './components/ShippingAddress';
 import Payment from './components/Payment';
@@ -31,10 +31,10 @@ const App = () => {
           {/* <Route 
             path="/register"
             render={
-              props => <RegisterScreen {...props} setStateUserInfo={setStateUserInfo} />
+              props => <UserRegister {...props} setStateUserInfo={setStateUserInfo} />
             } 
           /> */}
-          <Route path='/register' component={RegisterScreen}></Route>
+          <Route path='/register' component={UserRegister}></Route>
           <Route path='/cart/:id?' component={Cart}></Route>
           <Route path='/product/:id' component={ProductDetail}></Route>
         </div>

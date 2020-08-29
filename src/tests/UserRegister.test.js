@@ -4,9 +4,9 @@ import * as redux from 'react-redux'
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import RegisterScreen from '../components/RegisterScreen';
+import UserRegister from '../components/UserRegister';
 
-describe('RegisterScreen component', () => {
+describe('UserRegister component', () => {
   beforeEach(() => {
     const spy = jest.spyOn(redux, 'useSelector')
     spy.mockReturnValue({
@@ -19,12 +19,12 @@ describe('RegisterScreen component', () => {
 
     render(
       <BrowserRouter>
-        <RegisterScreen {...props} />
+        <UserRegister {...props} />
       </BrowserRouter>
     );
   });
 
-  it('renders RegisterScreen component', () => {
+  it('renders UserRegister component', () => {
     // testing beforeEach hook
   });
 
