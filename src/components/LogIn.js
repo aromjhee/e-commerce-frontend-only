@@ -36,7 +36,7 @@ const LogIn = props => {
     <div className='text-gray-800 m-1'>
       <h3 className='text-3xl text-gray-700 mb-10 flex justify-center'>Log In</h3>
       <div className='flex justify-center'>
-        <form onSubmit={submitHandler} className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
+        <form className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
           <div>
             {loading && (
               <div className='text-2xl flex justify-center items-center h-full w-full text-black'>
@@ -65,6 +65,7 @@ const LogIn = props => {
             <input
               className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline'
               placeholder='******************'
+              autoComplete='on'
               type='password'
               name='password'
               id='password'
@@ -74,7 +75,8 @@ const LogIn = props => {
           <div className='flex justify-center'>
             <button 
               type='submit' 
-              className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline button-width-custom mb-4'>
+              className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline button-width-custom mb-4'
+              onClick={submitHandler}>
                 Log In
             </button>
           </div>
