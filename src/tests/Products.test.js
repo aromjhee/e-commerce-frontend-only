@@ -36,26 +36,26 @@ describe('Products component', () => {
 
   it(`renders Products component`, () => {
     // testing beforeEach hook
+    // screen.getByRole('')
   });
 
   it(`renders a heading with text of the product's name`, () => {
-    const { getByText } = within(document.querySelector('.product-name'));
+    const { getByText } = within(document.getElementById('product-name'));
     expect(getByText(/AirForce 1/)).toBeInTheDocument();
   });
 
   it(`renders a heading with text of the product's brand`, () => {
-    const { getByText } = within(document.querySelector('.product-brand'));
+    const { getByText } = within(document.getElementById('product-brand'));
     expect(getByText(/Nike/)).toBeInTheDocument();
   });
 
   it(`renders a heading with text of the product's price`, () => {
-    const { getByText } = within(document.querySelector('.product-price'));
+    const { getByText } = within(document.getElementById('product-price'));
     expect(getByText(/100/)).toBeInTheDocument();
   });
 
   it(`renders a heading with text of the product's rating`, () => {
-    const { getByText } = within(document.querySelector('.product-rating'));
-    expect(getByText(/Stars/)).toBeInTheDocument();
+    expect(screen.getAllByRole('radio').length).toBe(5);
   });
 
   it(`renders an image of the product`, () => {

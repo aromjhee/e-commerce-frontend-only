@@ -37,7 +37,7 @@ describe('ProductDetail component', () => {
 
   it(`renders ProductDetail component`, () => {
     // testing beforeEach hook
-    // screen.getByRoll('')
+    // screen.getByRole('')
   });
 
   it(`renders a product's name`, () => {
