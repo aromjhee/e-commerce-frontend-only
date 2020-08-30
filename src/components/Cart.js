@@ -36,46 +36,52 @@ const Cart = props => {
         <Link to='/'>Continue Shopping</Link>
       </button>
       <div className='flex'>
-        <div className='text-gray-700'>
-          {
-            cartItems.length === 0 ? (
-              <div className='text-xl'>Cart is Empty</div>
-            ) :
-            cartItems.map(item => (
-              <div key={item.name} className='flex items-center border border-indigo-200 rounded-lg ml-10 mb-2 p-2 justify-around cart-row-width'>
-                <Link to={`/product/${item.product}`}>
-                  <img 
-                    className='product-cart-image ml-2 border border-purple-200' 
-                    src={item.image} 
-                    alt='product' />
-                </Link>
-                <div className='font-bold m-4 w-32'>
-                  <Link to={`/product/${item.product}`}>
-                    {item.name}
-                  </Link>
-                </div>
-                <div className='text-sm ml-20'> Qty: 
-                  <select 
-                    className='p-1 rounded-lg ml-1'
-                    value={item.qty} 
-                    onChange={(e) => dispatch(addToCart(item.product, e.target.value))}>
-                      {[...Array(item.countInStock).keys()].map(x =>
-                        <option key={x + 1} value={x + 1}>{x + 1}</option>
-                      )}
-                  </select>
-                </div>
-                <div className='text-indigo-600 text-sm font-bold ml-20'>
-                  ${item.price} <span className='text-xs text-gray-500'>/item</span>
-                </div>
-                <button 
-                  onClick={() => removeFromCartHandler(item.product)}
-                  className='text-white bg-red-500 px-4 py-1 text-sm rounded mx-2 font-semibold ml-20'>
-                    Delete
-                </button>
+        {
+          cartItems.length === 0 ? (
+            <div className='text-gray-700 w-1/2 m-auto'>
+              <div className='text-xl'>
+                Cart is Empty
               </div>
-            ))
-          }
-        </div>
+            </div>
+          ) : (
+            <div className='flex flex-col'>
+              {cartItems.map(item => (
+                <div key={item.name} className='flex items-center border border-indigo-200 rounded-lg ml-10 mb-2 p-2 justify-around cart-row-width text-gray-700 h-24'>
+                  <Link to={`/product/${item.product}`}>
+                    <img 
+                      className='product-cart-image ml-2 border border-purple-200' 
+                      src={item.image} 
+                      alt='product' />
+                  </Link>
+                  <div className='font-bold m-4 w-32'>
+                    <Link to={`/product/${item.product}`}>
+                      {item.name}
+                    </Link>
+                  </div>
+                  <div className='text-sm ml-20'> Qty: 
+                    <select 
+                      className='p-1 rounded-lg ml-1'
+                      value={item.qty} 
+                      onChange={(e) => dispatch(addToCart(item.product, e.target.value))}>
+                        {[...Array(item.countInStock).keys()].map(x =>
+                          <option key={x + 1} value={x + 1}>{x + 1}</option>
+                        )}
+                    </select>
+                  </div>
+                  <div className='text-indigo-600 text-sm font-bold ml-20'>
+                    ${item.price} <span className='text-xs text-gray-500'>/item</span>
+                  </div>
+                  <button 
+                    onClick={() => removeFromCartHandler(item.product)}
+                    className='text-white bg-red-500 px-4 py-1 text-sm rounded mx-2 font-semibold ml-20'>
+                      Delete
+                  </button>
+                </div>
+              ))
+              }
+            </div>
+          )
+        }
         <div className='text-gray-700 px-4 mr-20 flex flex-col items-center content-center justify-around border rounded-lg border-indigo-200 p-5 cart-checkout-box-height ml-10'>
           <h3 className=''>
             SubTotal ({cartItems.reduce((a, c) => a + Number(c.qty), 0)} items):

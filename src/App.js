@@ -35,7 +35,7 @@ const App = () => {
             } 
           /> */}
           <Route path='/register' component={UserRegister}></Route>
-          <Route path='/cart' component={Cart}></Route>
+          <Route path='/cart/:id?' component={Cart}></Route>
           <Route path='/product/:id' component={ProductDetail}></Route>
         </div>
         <Footer />
