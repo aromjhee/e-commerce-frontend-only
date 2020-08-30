@@ -56,8 +56,7 @@ imma-Zone is an e-commerce clone.
 # Future Implementation
 - Search bar
 - Sorting by option
-- "Star" reviews
-- Links to reviews
+- User reviews
 - Profile page detailing user info
 - Edit user info
 - Landing page
