@@ -25,7 +25,7 @@ const ProductDetail = props => {
 
   return (
     <>
-      <button className='bg-gray-400 hover:bg-gray-500 text-gray-700 font-bold py-2 px-4 rounded-lg ml-4 mb-10 inline-flex items-center text-sm'>
+      <button className='bg-gray-400 hover:bg-gray-500 text-gray-700 font-bold py-2 px-4 rounded-lg ml-4 mb-10 inline-flex items-center text-sm' id='back-to-button'>
         <Link to ='/'>Back to Products</Link>
       </button>
       {
@@ -72,13 +72,18 @@ const ProductDetail = props => {
               </div>
               <div className=''>
                 {product.countInStock > 0 &&
-                  (<button onClick={handleAddToCart} className='bg-blue-800 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-lg w-48 text-center'>Add to Cart</button>)
+                  (<button 
+                    onClick={handleAddToCart} 
+                    className='bg-blue-800 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-lg w-48 text-center'
+                    id='add-to-cart-button'>
+                      Add to Cart
+                  </button>)
                 }
               </div>
             </div>
           </div>
           <div className='text-black ml-24 mt-4 pr-10 flex flex-col'>
-            <div className='ml-1 text-gray-700 font-bold text-2xl'>
+            <div className='ml-1 text-gray-700 font-bold text-2xl' id='product-name'>
               {product.name}
             </div>
             <div className='my-2'>
