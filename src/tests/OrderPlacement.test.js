@@ -29,26 +29,37 @@ describe('OrderPlacement component', () => {
 
   it(`renders OrderPlacement component`, () => {
     // testing beforeEach hook
+    // screen.getByRole('')
   });
 
-  it(`renders 4 headings with texts: 'Shipping', 'Payment', 'Shopping Cart', 'Order Summary'`, () => {
-    const { getByText: getByText1 } = within(document.querySelector('.placeorder-info'));
-    const shipping = getByText1('Shipping');
-    const payment = getByText1('Payment');
-    const shoppingCart = getByText1('Shopping Cart');
-
-    const { getByText } = within(document.querySelector('.placeorder-action'));
-    const orderSummary = getByText('Order Summary');
+  it(`renders 3 headings with texts: 'Shipping Summary', 'Order Summary', 'Shopping Cart'`, () => {
+    const { getByText } = within(document.getElementById('shipping-summary'));
+    const shippingSummary = getByText(/Shipping Summary/);
+    const { getByText: getByText1 } = within(document.getElementById('order-summary'));
+    const orderSummary = getByText1(/Order Summary/);
+    const { getByText: getByText2 } = within(document.getElementById('shopping-cart'));
+    const shoppingCart = getByText2(/Shopping Cart/);
     
-    expect(screen.getAllByRole('heading').length).toBe(4);
+    expect(screen.getAllByRole('heading').length).toBe(3);
+    expect(shippingSummary).toBeInTheDocument();
+    expect(orderSummary).toBeInTheDocument();
+    expect(shoppingCart).toBeInTheDocument();
+  });
+
+  it(`renders checkout steps: 'Log In', 'Shipping', 'Payment', 'Place Order'`, () => {
+    const logIn = document.getElementById('log-in');
+    const shipping = document.getElementById('shipping');
+    const payment = document.getElementById('payment');
+    const placeOrder = document.getElementById('place-order');
+
+    expect(logIn).toBeInTheDocument();
     expect(shipping).toBeInTheDocument();
     expect(payment).toBeInTheDocument();
-    expect(shoppingCart).toBeInTheDocument();
-    expect(orderSummary).toBeInTheDocument();
+    expect(placeOrder).toBeInTheDocument();
   });
 
   it(`renders address entered in previous step`, () => {
-    const { getByText } = within(document.querySelector('.placeorder-info'));
+    const { getByText } = within(document.getElementById('shipping-address'));
     expect(getByText(/123 Washington/)).toBeInTheDocument();
     expect(getByText(/New York/)).toBeInTheDocument();
     expect(getByText(/5555/)).toBeInTheDocument();
@@ -95,7 +106,7 @@ describe('OrderPlacement component', () => {
   })
 
   it(`renders a button with text 'Place Order'`, () => {
-    const { getByText } = within(document.querySelector('.placeorder-action'));
+    const { getByText } = within(document.getElementById('place-order-button'));
 
     expect(screen.getByRole('button')).toBeInTheDocument();
     expect(getByText(/Place Order/)).toBeInTheDocument();

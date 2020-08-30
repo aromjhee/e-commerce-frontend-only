@@ -36,8 +36,8 @@ const OrderPlacement = props => {
         <div className='text-gray-700'>
           <div className='flex justify-center'>
             <div className='flex flex-col items-start m-10 justify-start'>
-              <h3 className='text-xl mb-2 font-bold'>Shipping Summary</h3>
-              <div className='flex flex-col content-end mb-2'>
+              <h3 className='text-xl mb-2 font-bold' id='shipping-summary'>Shipping Summary</h3>
+              <div className='flex flex-col content-end mb-2' id='shipping-address'>
                 <div><span className='font-bold text-sm'>Address:</span> {cart.shipping.address}</div>
                 <div><span className='font-bold text-sm'>City:</span> {cart.shipping.city}</div>
                 <div><span className='font-bold text-sm'>Zip Code:</span> {cart.shipping.postalCode}</div>
@@ -48,10 +48,11 @@ const OrderPlacement = props => {
             <div className='text-gray-700 px-4 m-10 flex flex-col items-center content-center justify-around border rounded-lg border-indigo-200 p-5 order-placement-box-size'>
               <button
                 onClick={placeOrderHandler}
-                className='text-gray-900 bg-gray-500 hover:bg-gray-400 px-4 py-1 text-2xl rounded-full font-semibold mt-6 button-width-custom'>
+                className='text-gray-900 bg-gray-500 hover:bg-gray-400 px-4 py-1 text-2xl rounded-full font-semibold mt-6 button-width-custom'
+                id='place-order-button'>
                 Place Order
                 </button>
-              <h3 className='mt-6 mb-2 text-xl font-bold'>Order Summary</h3>
+              <h3 className='mt-6 mb-2 text-xl font-bold' id='order-summary'>Order Summary</h3>
               <div className='text-sm font-bold mb-2'>
                 Subtotal:
                 <span className='text-orange-600 text-sm font-bold ml-2'>
@@ -78,7 +79,7 @@ const OrderPlacement = props => {
               </div>
             </div>
           </div>
-          <h3 className='text-xl mb-4 font-bold flex justify-center'>Shopping Cart</h3>
+          <h3 className='text-xl mb-4 font-bold flex justify-center' id='shopping-cart'>Shopping Cart</h3>
           <div className='flex justify-center'>
             <div className='flex flex-col w-11/12 mb-10'>
                 {
