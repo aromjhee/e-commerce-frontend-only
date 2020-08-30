@@ -18,12 +18,12 @@ const Payment = props => {
     <>
       <CheckoutSteps step1 step2 step3 />
       <div className='h-screen flex flex-col content-center items-center'>
-        <h2 className='text-3xl text-gray-700 my-10'>Payment</h2>
+        <h2 className='text-3xl text-gray-700 my-10' id='payment-header'>Payment</h2>
         <form onSubmit={submitHandler}>
           <div className='mb-4'>
             <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='paymentMethod'>Paypal</label>              
             <input
-              class="shadow border rounded py-2 px-3 focus:outline-none focus:shadow-outline"
+              className="shadow border rounded py-2 px-3 focus:outline-none focus:shadow-outline"
               type='radio'
               name='paymentMethod'
               id='paymentMethod'
@@ -33,7 +33,7 @@ const Payment = props => {
           <div className='mb-4'>
             <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='paymentMethod'>Visa</label>              
             <input
-              class="shadow border rounded py-2 px-3 focus:outline-none focus:shadow-outline"
+              className="shadow border rounded py-2 px-3 focus:outline-none focus:shadow-outline"
               type='radio'
               name='paymentMethod'
               id='paymentMethod'
@@ -43,7 +43,7 @@ const Payment = props => {
           <div className='mb-4'>
             <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='paymentMethod'>Master</label>              
             <input
-              class="shadow border rounded py-2 px-3 focus:outline-none focus:shadow-outline"
+              className="shadow border rounded py-2 px-3 focus:outline-none focus:shadow-outline"
               type='radio'
               name='paymentMethod'
               id='paymentMethod'
@@ -53,7 +53,7 @@ const Payment = props => {
           <div className='mb-4'>
             <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='paymentMethod'>American Express</label>              
             <input
-              class="shadow border rounded py-2 px-3 focus:outline-none focus:shadow-outline"
+              className="shadow border rounded py-2 px-3 focus:outline-none focus:shadow-outline"
               type='radio'
               name='paymentMethod'
               id='paymentMethod'

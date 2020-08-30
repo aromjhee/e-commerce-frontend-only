@@ -18,18 +18,22 @@ describe('Payment component', () => {
 
   it('renders Payment component', () => {
     // testing beforeEach hook
+    // screen.getByRole('')
   });
 
   it(`renders text 'Payment'`, () => {
-    const { getByText } = within(document.querySelector('.form-container'));
+    const { getByText } = within(document.getElementById('payment-header'));
     
     expect(screen.getByRole('heading')).toBeInTheDocument();
     expect(getByText(/Payment/)).toBeInTheDocument();
   });
 
-  it(`renders a radio input field with text 'Paypal'`, () => {
-    expect(screen.getByRole('radio')).toBeInTheDocument();
+  it(`renders 4 radio input field with text 'Paypal', 'Visa', 'Master', 'American Express'`, () => {
+    expect(screen.getAllByRole('radio').length).toBe(4);
     expect(screen.getByText(/Paypal/)).toBeInTheDocument();
+    expect(screen.getByText(/Visa/)).toBeInTheDocument();
+    expect(screen.getByText(/Master/)).toBeInTheDocument();
+    expect(screen.getByText(/American Express/)).toBeInTheDocument();
   });
 
   it(`renders button with text 'Continue'`, () => {
