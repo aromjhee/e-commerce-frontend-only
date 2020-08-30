@@ -41,8 +41,9 @@
   width: 60rem;
 }
 
-.cart-checkout-box-height {
-  height: 200px;
+.cart-checkout-box-size {
+  height: 12rem;
+  min-width: 18rem;
 }
 
 .check-out-steps-width {

@@ -83,7 +83,7 @@ const Cart = props => {
             </div>
           )
         }
-        <div className='text-gray-700 px-4 mr-20 flex flex-col items-center content-center justify-around border rounded-lg border-indigo-200 p-5 cart-checkout-box-height ml-10'>
+        <div className='text-gray-700 px-4 mr-20 flex flex-col items-center content-center justify-around border rounded-lg border-indigo-200 p-5 cart-checkout-box-size ml-10'>
           <h3 id='subtotal'>
             SubTotal ({cartItems.reduce((a, c) => a + Number(c.qty), 0)} items):
             ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}

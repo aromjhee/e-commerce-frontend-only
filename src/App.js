@@ -20,7 +20,7 @@ const App = () => {
     <BrowserRouter>
       <div className="flex flex-col justify-between app-bg-color app-font-color text-lg h-screen">
         <NavBar />
-        <div className="h-screen mt-10">
+        <div className="lg:h-auto h-screen mt-10">
           <Route exact path='/' component={Products}></Route>
           <Route path='/products' component={CRUDProduct}></Route>
           <Route path="/profile" component={UserProfile} />
