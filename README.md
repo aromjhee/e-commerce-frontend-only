@@ -41,7 +41,17 @@ imma-Zone is an e-commerce clone.
 - Admin can create/edit/delete products
   - ![screenshot1](public/images/screenshot1.png)
 - Unit tests
-  - ![unit-tests](public/images/screenshot2.jpg)
+  - ![unit-tests](public/images/screenshot2.png)
+  ![unit-tests](public/images/appjs-test.png)
+  ![unit-tests](public/images/cartjs-test.png)
+  ![unit-tests](public/images/loginjs-test.png)
+  ![unit-tests](public/images/oderplacementjs-test.png)
+  ![unit-tests](public/images/paymentjs-test.png)
+  ![unit-tests](public/images/productdetailjs-test.png)
+  ![unit-tests](public/images/productsjs-test.png)
+  ![unit-tests](public/images/shippingaddressjs-test.png)
+  ![unit-tests](public/images/userprofilejs-test.png)
+  ![unit-tests](public/images/userregisterjs-test.png)
 
 # Future Implementation
 - Search bar
