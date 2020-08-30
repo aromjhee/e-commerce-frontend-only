@@ -38,10 +38,11 @@ describe('Cart component', () => {
   });
 
   it(`renders 2 headings with text 'Shopping Cart' and 'SubTotal`, () => {
-    const { getByText: getByText1 } = within(document.querySelector('.cart-list-container'));
+    const { getByText: getByText1 } = within(document.getElementsByTagName('h3'));
+    console.log('--------------', getByText1)
     const shoppingCart = getByText1(/Shopping Cart/);
 
-    const { getByText } = within(document.querySelector('.cart-action'));
+    const { getByText } = within(document.getElementsByTagName('h3'));
     const subTotal = getByText(/SubTotal/);
     
     expect(screen.getAllByRole('heading').length).toBe(2);

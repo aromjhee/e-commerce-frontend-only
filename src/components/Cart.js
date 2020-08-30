@@ -35,7 +35,7 @@ const Cart = props => {
       <button className='bg-gray-400 hover:bg-gray-500 text-gray-700 font-bold py-2 px-4 rounded-lg ml-10 mb-10 inline-flex items-center text-sm'>
         <Link to='/'>Continue Shopping</Link>
       </button>
-      <div className='flex justify-between h-screen'>
+      <div className='flex'>
         <div className='text-gray-700'>
           {
             cartItems.length === 0 ? (
@@ -76,7 +76,7 @@ const Cart = props => {
             ))
           }
         </div>
-        <div className='text-gray-700 px-4 mr-20 flex flex-col items-center content-center justify-around border rounded-lg border-indigo-200 p-5 cart-checkout-box-height'>
+        <div className='text-gray-700 px-4 mr-20 flex flex-col items-center content-center justify-around border rounded-lg border-indigo-200 p-5 cart-checkout-box-height ml-10'>
           <h3 className=''>
             SubTotal ({cartItems.reduce((a, c) => a + Number(c.qty), 0)} items):
             ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}

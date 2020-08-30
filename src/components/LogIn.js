@@ -20,8 +20,16 @@ const LogIn = props => {
   }, [userInfo, props.history, redirect]);
 
   const submitHandler = e => {
-    e.preventDefault();
+    if (e !== undefined) {
+      e.preventDefault();
+    }
     dispatch(logIn(email, password));
+  }
+
+  const adminLogin = () => {
+    setEmail('admin@admin.com')
+    setPassword('1234')
+    submitHandler()
   }
 
   return (
@@ -68,6 +76,13 @@ const LogIn = props => {
               type='submit' 
               className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline button-width-custom mb-4'>
                 Log In
+            </button>
+          </div>
+          <div className='flex justify-center'>
+            <button 
+              className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline button-width-custom mb-4'
+              onClick={adminLogin}>
+                Demo Admin Log In
             </button>
           </div>
           <div className='font-black text-sm flex justify-center mb-4'>

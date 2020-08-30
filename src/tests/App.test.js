@@ -37,6 +37,7 @@ describe('App component', () => {
 
   it(`renders App component`, () => {
     // testing beforeEach hook
+    // screen.getByRole('')
   });
 
   it(`renders App component with text 'imma-Zone'`, () => {
@@ -55,8 +56,18 @@ describe('App component', () => {
   });
 
   it(`renders text 'Github' in the footer and is a link`, () => {
-    const { getByText } = within(screen.getAllByRole('link')[8])
+    const { getByText } = within(screen.getAllByRole('link')[6])
     expect(getByText(/Github/)).toBeInTheDocument();
+  });
+  
+  it(`renders text 'LinkedIn' in the footer and is a link`, () => {
+    const { getByText } = within(screen.getAllByRole('link')[7])
+    expect(getByText(/LinkedIn/)).toBeInTheDocument();
+  });
+
+  it(`renders text 'AngelList' in the footer and is a link`, () => {
+    const { getByText } = within(screen.getAllByRole('link')[8])
+    expect(getByText(/AngelList/)).toBeInTheDocument();
   });
 
   it(`renders products`, () => {

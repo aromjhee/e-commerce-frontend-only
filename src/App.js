@@ -18,9 +18,9 @@ import UserProfile from './components/UserProfile';
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="grid gap-4 app-bg-color app-font-color text-lg">
+      <div className="flex flex-col justify-between app-bg-color app-font-color text-lg h-screen">
         <NavBar />
-        <div className="row-start-2 row-span-1 h-screen">
+        <div className="h-screen mt-10">
           <Route exact path='/' component={Products}></Route>
           <Route path='/products' component={CRUDProduct}></Route>
           <Route path="/profile" component={UserProfile} />
