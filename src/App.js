@@ -28,12 +28,6 @@ const App = () => {
           <Route path='/payment' component={Payment}></Route>
           <Route path='/place-order' component={OrderPlacement}></Route>
           <Route path="/log-in" component={LogIn} />
-          {/* <Route 
-            path="/register"
-            render={
-              props => <UserRegister {...props} setStateUserInfo={setStateUserInfo} />
-            } 
-          /> */}
           <Route path='/register' component={UserRegister}></Route>
           <Route path='/cart/:id?' component={Cart}></Route>
           <Route path='/product/:id' component={ProductDetail}></Route>
