@@ -59,10 +59,12 @@ const CRUDProduct = () => {
   return (
     <>
       <div className='text-gray-800 m-1'>
-        <div className='product-header'>
+        <div className=''>
           <button 
             onClick={() => openModal({})}
-            className='text-white bg-red-500 p-4 text-lg rounded-lg mb-4 font-semibold'>Create Product</button>
+            className='text-white bg-red-500 p-2 text-lg rounded-lg mb-4 font-semibold'>
+              Create New Product
+          </button>
         </div>
         {modalVisible && 
           <form onSubmit={submitHandler} className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
@@ -152,7 +154,7 @@ const CRUDProduct = () => {
             </div>
           </form>
         }        
-        <div className='text-gray-800 rounded border-b border-gray-200 mb-56'>
+        <div className='text-gray-800 rounded border-b border-gray-200'>
           <table className='w-screen'>
             <thead className='bg-gray-800 text-white'>
               <tr>
@@ -161,7 +163,7 @@ const CRUDProduct = () => {
                 <th className='text-left py-3 px-4 font-semibold text-sm'>Price</th>
                 <th className='text-left py-3 px-4 font-semibold text-sm'>Category</th>
                 <th className='text-left py-3 px-4 font-semibold text-sm'>Brand</th>
-                <th className='text-left py-3 px-4 font-semibold text-sm'>Action</th>
+                <th className='text-left py-3 px-4 font-semibold text-sm text-red-200'>NOTE: Delete button disabled</th>
               </tr>
             </thead>
             <tbody className='text-gray-700'>
@@ -178,10 +180,9 @@ const CRUDProduct = () => {
                     className='text-white bg-orange-500 p-4 py-1 text-sm rounded mr-2 font-semibold'>
                       Edit
                   </button>
-                  {' '}
                   <button 
                     onClick={() => deleteHandler(product)}
-                    className='text-white bg-red-500 px-4 py-1 text-sm rounded mx-2 font-semibold'>
+                    className='text-white bg-red-500 px-4 py-1 text-sm rounded mx-2 font-semibold cursor-not-allowed'>
                       Delete
                   </button>
                 </td>

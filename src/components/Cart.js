@@ -42,21 +42,21 @@ const Cart = props => {
               <div className='text-xl'>Cart is Empty</div>
             ) :
             cartItems.map(item => (
-              <div key={item.name} className='flex items-center border border-indigo-200 rounded-lg ml-10 mb-2 p-4 justify-around'>
+              <div key={item.name} className='flex items-center border border-indigo-200 rounded-lg ml-10 mb-2 p-2 justify-around cart-row-width'>
                 <Link to={`/product/${item.product}`}>
                   <img 
-                    className='product-cart-image ml-3 border border-purple-200' 
+                    className='product-cart-image ml-2 border border-purple-200' 
                     src={item.image} 
                     alt='product' />
                 </Link>
-                <div className='font-bold ml-4'>
+                <div className='font-bold m-4 w-32'>
                   <Link to={`/product/${item.product}`}>
                     {item.name}
                   </Link>
                 </div>
                 <div className='text-sm ml-20'> Qty: 
                   <select 
-                    className='p-1 rounded-lg'
+                    className='p-1 rounded-lg ml-1'
                     value={item.qty} 
                     onChange={(e) => dispatch(addToCart(item.product, e.target.value))}>
                       {[...Array(item.countInStock).keys()].map(x =>

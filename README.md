@@ -28,14 +28,17 @@ imma-Zone is an e-commerce clone.
 # Features
 
 - Detail page for products
+  - ![detail-page](public/images/detail-page.png)
 - Add products to carts
   - Subtotal updates based on quantity
+  - ![cart-screenshot](public/images/cart-screenshot.png)
+- Proceed to Checkout
+  - ![checkout](public/images/proceed-to-checkout.gif)
 - Log in/register users
+- Admin Demo Login
+  - ![demo-login](public/images/demo-login.png)
 - Admin can create/edit/delete products
-  - admin email: admin@admin.com 
-  - admin password: 1234
-  - ![screenshot1](public/images/screenshot1.jpg)
-- Sidebar menu to navigate between categories
+  - ![screenshot1](public/images/screenshot1.png)
 - Unit tests
   - ![unit-tests](public/images/screenshot2.jpg)
 

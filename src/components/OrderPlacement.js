@@ -32,10 +32,10 @@ const OrderPlacement = props => {
   return (
     <>
       <CheckoutSteps step1 step2 step3 step4 />
-      <div className='mt-10 h-screen'>
+      <div className='mt-10'>
         <div className='text-gray-700'>
-          <div className='flex justify-between'>
-            <div className='flex flex-col items-start ml-10 mb-10 justify-start'>
+          <div className='flex justify-center'>
+            <div className='flex flex-col items-start m-10 justify-start'>
               <h3 className='text-xl mb-2 font-bold'>Shipping Summary</h3>
               <div className='flex flex-col content-end mb-2'>
                 <div><span className='font-bold text-sm'>Address:</span> {cart.shipping.address}</div>
@@ -45,7 +45,7 @@ const OrderPlacement = props => {
                 <div><span className='font-bold text-sm'>Payment:</span> {cart.payment.paymentMethod}</div>
               </div>
             </div>
-            <div className='text-gray-700 px-4 mr-20 flex flex-col items-center content-center justify-around border rounded-lg border-indigo-200 p-5 order-placement-box-size'>
+            <div className='text-gray-700 px-4 m-10 flex flex-col items-center content-center justify-around border rounded-lg border-indigo-200 p-5 order-placement-box-size'>
               <button
                 onClick={placeOrderHandler}
                 className='text-gray-900 bg-gray-500 hover:bg-gray-400 px-4 py-1 text-2xl rounded-full font-semibold mt-6 button-width-custom'>
@@ -53,7 +53,7 @@ const OrderPlacement = props => {
                 </button>
               <h3 className='mt-6 mb-2 text-xl font-bold'>Order Summary</h3>
               <div className='text-sm font-bold mb-2'>
-                Subtotal: 
+                Subtotal:
                 <span className='text-orange-600 text-sm font-bold ml-2'>
                   ${itemsPrice.toFixed(2)}
                 </span>
@@ -78,39 +78,41 @@ const OrderPlacement = props => {
               </div>
             </div>
           </div>
-          <h3 className='text-xl mb-4 font-bold ml-10'>Shopping Cart</h3>
-          <div className='flex flex-col'>
-              {
-                cartItems.length === 0 ? (
-                <div className='text-xl'>Cart is Empty</div>
-                ) :
-                cartItems.map(item => (
-                  <div key={item.name} className='flex items-center border border-indigo-200 rounded-lg ml-4 mb-2 p-4 justify-around'>
-                    <Link to={`/product/${item.product}`}>
-                      <img 
-                        className='product-cart-image ml-3 border border-purple-200'
-                        src={item.image}
-                        alt='product' />
-                    </Link>
-                    <div className='font-bold ml-4'>
+          <h3 className='text-xl mb-4 font-bold flex justify-center'>Shopping Cart</h3>
+          <div className='flex justify-center'>
+            <div className='flex flex-col w-11/12 mb-10'>
+                {
+                  cartItems.length === 0 ? (
+                  <div className='text-xl'>Cart is Empty</div>
+                  ) :
+                  cartItems.map(item => (
+                    <div key={item.name} className='flex items-center border border-indigo-200 rounded-lg ml-4 mb-2 p-2 justify-around'>
                       <Link to={`/product/${item.product}`}>
-                        {item.name}
+                        <img 
+                          className='product-cart-image ml-1 border border-purple-200'
+                          src={item.image}
+                          alt='product' />
                       </Link>
-                    </div>
-                    <div className='text-sm ml-20 flex flex-col'> 
-                      <div className='self-center'>
-                        Qty: {item.qty}
+                      <div className='font-bold ml-4 w-32'>
+                        <Link to={`/product/${item.product}`}>
+                          {item.name}
+                        </Link>
                       </div>
-                      <div className='text-xs text-gray-500 self-center'>
-                        ${(item.price).toFixed(2)} per item
+                      <div className='text-sm ml-20 flex flex-col'> 
+                        <div className='self-center'>
+                          Qty: {item.qty}
+                        </div>
+                        <div className='text-xs text-gray-600 self-center'>
+                          ${(item.price).toFixed(2)} per item
+                        </div>
+                      </div>
+                      <div className='text-indigo-600 text-sm font-bold ml-10'>
+                        ${(item.price * item.qty).toFixed(2)}
                       </div>
                     </div>
-                    <div className='text-indigo-600 text-sm font-bold ml-10'>
-                      ${(item.price * item.qty).toFixed(2)}
-                    </div>
-                  </div>
-                ))
-              }
+                  ))
+                }
+            </div>
           </div>
         </div>
       </div>

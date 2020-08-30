@@ -37,6 +37,10 @@
   border-radius: 15px;
 }
 
+.cart-row-width {
+  width: 60rem;
+}
+
 .cart-checkout-box-height {
   height: 200px;
 }

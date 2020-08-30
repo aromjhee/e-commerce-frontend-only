@@ -20,7 +20,7 @@ const LogIn = props => {
   }, [userInfo, props.history, redirect]);
 
   const submitHandler = e => {
-    if (e !== undefined) {
+    if (e) {
       e.preventDefault();
     }
     dispatch(logIn(email, password));

@@ -34,7 +34,7 @@ const ProductDetail = props => {
         ) : error ? (
           <div className='text-2xl flex h-full w-full text-black'>{error}</div>
         ) : (
-        <div className='p-4 h-screen'>
+        <div className='p-4'>
           <div className='grid grid-cols-4'>
             <img 
               className='product-detail-image col-start-1 col-span-3 mb-5 ml-24 shadow-2xl' 
