@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addToCart, removeFromCart } from '../actions/cartActions';
@@ -10,6 +10,7 @@ const Cart = props => {
 
   // couldn't get test to pass
   // when using useParams from react-router-dom
+  // make sure to import useParams in react-router-dom
   // const { id } = useParams();
   const id = props.match.params.id;
   const qty = props.location.search ? Number(props.location.search.split('=')[1]) : 1;
@@ -31,7 +32,7 @@ const Cart = props => {
 
   return (
     <div>
-      <h3 className='text-3xl text-gray-700 mb-10 ml-10'>Shopping Cart</h3>
+      <h3 className='text-3xl text-gray-700 mb-10 ml-10' id='shopping-cart'>Shopping Cart</h3>
       <button className='bg-gray-400 hover:bg-gray-500 text-gray-700 font-bold py-2 px-4 rounded-lg ml-10 mb-10 inline-flex items-center text-sm'>
         <Link to='/'>Continue Shopping</Link>
       </button>
@@ -53,7 +54,7 @@ const Cart = props => {
                       src={item.image} 
                       alt='product' />
                   </Link>
-                  <div className='font-bold m-4 w-32'>
+                  <div className='font-bold m-4 w-32' id='product-name'>
                     <Link to={`/product/${item.product}`}>
                       {item.name}
                     </Link>
@@ -68,7 +69,7 @@ const Cart = props => {
                         )}
                     </select>
                   </div>
-                  <div className='text-indigo-600 text-sm font-bold ml-20'>
+                  <div className='text-indigo-600 text-sm font-bold ml-20' id='product-price'>
                     ${item.price} <span className='text-xs text-gray-500'>/item</span>
                   </div>
                   <button 
@@ -83,7 +84,7 @@ const Cart = props => {
           )
         }
         <div className='text-gray-700 px-4 mr-20 flex flex-col items-center content-center justify-around border rounded-lg border-indigo-200 p-5 cart-checkout-box-height ml-10'>
-          <h3 className=''>
+          <h3 id='subtotal'>
             SubTotal ({cartItems.reduce((a, c) => a + Number(c.qty), 0)} items):
             ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
           </h3>

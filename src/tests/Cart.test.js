@@ -35,14 +35,14 @@ describe('Cart component', () => {
 
   it(`renders Cart component`, () => {
     // testing beforeEach hook
+    // screen.getByRole('')
   });
 
   it(`renders 2 headings with text 'Shopping Cart' and 'SubTotal`, () => {
-    const { getByText: getByText1 } = within(document.getElementsByTagName('h3'));
-    console.log('--------------', getByText1)
+    const { getByText: getByText1 } = within(document.getElementById('shopping-cart'));
     const shoppingCart = getByText1(/Shopping Cart/);
 
-    const { getByText } = within(document.getElementsByTagName('h3'));
+    const { getByText } = within(document.getElementById('subtotal'));
     const subTotal = getByText(/SubTotal/);
     
     expect(screen.getAllByRole('heading').length).toBe(2);
@@ -51,12 +51,12 @@ describe('Cart component', () => {
   });
 
   it(`renders a heading with text of the product's name`, () => {
-    const { getByText } = within(document.querySelector('.cart-name'));
+    const { getByText } = within(document.getElementById('product-name'));
     expect(getByText(/AirForce 1/)).toBeInTheDocument();
   });
 
   it(`renders a heading with text of the product's price`, () => {
-    const { getByText } = within(document.querySelector('.cart-price'));
+    const { getByText } = within(document.getElementById('product-price'));
     expect(getByText(/100/)).toBeInTheDocument();
   });
 
@@ -74,7 +74,7 @@ describe('Cart component', () => {
   });
 
   it(`renders a delete product button`, () => {
-    expect(screen.getAllByRole('button').length).toBe(2);
+    expect(screen.getAllByRole('button').length).toBe(3);
     expect(screen.getByText(/Delete/)).toBeInTheDocument();
   });
 
@@ -93,13 +93,13 @@ describe('Cart component', () => {
     expect(screen.getByText(/Cart is Empty/)).toBeInTheDocument();
   });
 
-  it(`renders a button with text 'Place Order'`, () => {
-    expect(screen.getAllByRole('button').length).toBe(2);
+  it(`renders a button with text 'Proceed to Checkout'`, () => {
+    expect(screen.getAllByRole('button').length).toBe(3);
     expect(screen.getByText(/Proceed to Checkout/)).toBeInTheDocument();
   });
 
   it(`renders correct subtotal amount`, () => {
-    const { getByText } = within(document.querySelector('.cart-action'));
+    const { getByText } = within(document.getElementById('subtotal'));
     expect(getByText(/200/)).toBeInTheDocument();
   });
 

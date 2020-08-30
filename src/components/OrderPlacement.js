@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -9,11 +9,11 @@ const OrderPlacement = props => {
 
   const { cartItems, shipping, payment } = cart;
 
-  // if (!shipping.address) {
-  //   props.history.push('/shipping');
-  // } else if (!payment.paymentMethod) {
-  //   props.history.push('/payment');
-  // }
+  if (!shipping.address) {
+    props.history.push('/shipping');
+  } else if (!payment.paymentMethod) {
+    props.history.push('/payment');
+  }
 
   const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
   const shippingPrice = itemsPrice > 100 ? 0 : 10;
