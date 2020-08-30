@@ -58,3 +58,9 @@
 .button-width-custom {
   width: 15rem;
 }
+
+@media screen and (min-height: 200px) and (max-height: 1200px) {
+  .footer-media-query {
+    margin-top: 20rem;
+  }
+}
