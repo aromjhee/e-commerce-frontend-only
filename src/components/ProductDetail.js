@@ -26,7 +26,7 @@ const ProductDetail = props => {
   return (
     <>
       <button className='bg-gray-400 hover:bg-gray-500 text-gray-700 font-bold py-2 px-4 rounded-lg ml-4 mb-10 inline-flex items-center text-sm' id='back-to-button'>
-        <Link to ='/'>Back to Products</Link>
+        <Link to='/'>Back to Products</Link>
       </button>
       {
         loading ? (
