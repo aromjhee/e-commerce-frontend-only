@@ -17,7 +17,8 @@ imma-Zone is an e-commerce clone.
   - React Testing Library
   - JS-Cookie
   - CSS Grid
-	- CSS
+  - TailwindCSS
+  - Material-UI
 - Back-end development
 	- Express.js
   - Babel
