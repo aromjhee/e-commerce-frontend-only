@@ -15,9 +15,9 @@ const LogIn = props => {
   
   useEffect(() => {
     if (userInfo) {
-      props.history.push(redirect);
+      props.history.push('/');
     }
-  }, [userInfo, props.history, redirect]);
+  }, [userInfo, props.history]);
 
   const submitHandler = e => {
     if (e) {
@@ -36,7 +36,7 @@ const LogIn = props => {
     <div className='text-gray-800 m-1'>
       <h3 className='text-3xl text-gray-700 mb-10 flex justify-center'>Log In</h3>
       <div className='flex justify-center'>
-        <form className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
+        <form onSubmit={submitHandler} className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
           <div>
             {loading && (
               <div className='text-2xl flex justify-center items-center h-full w-full text-black'>
