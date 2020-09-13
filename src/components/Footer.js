@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className='navbar-bg-color h-12 w-full flex justify-center items-center footer-media-query'>
+    <div className='navbar-bg-color h-12 py-8 w-full flex justify-center items-center footer-media-query'>
       <div className='link-hover-color'>
         <a href='https://github.com/aromjhee'>
           <span className='text-xs text-white hidden'>Github</span>
