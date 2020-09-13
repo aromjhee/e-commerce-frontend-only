@@ -18,7 +18,7 @@ import UserProfile from './components/UserProfile';
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="flex flex-col justify-between app-bg-color app-font-color text-lg h-screen">
+      <div className="flex flex-col justify-between app-bg-color app-font-color text-lg h-full">
         <NavBar />
         <div className="h-screen mt-10">
           <Route exact path='/' component={Products}></Route>

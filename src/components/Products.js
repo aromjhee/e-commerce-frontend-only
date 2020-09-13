@@ -26,7 +26,7 @@ const Products = () => {
     ) : (
       <div className='grid grid-cols-3 grid-rows-1 gap-8 flex flex-wrap px-10'>
         {products.map(product => (
-          <div key={product._id} className='flex flex-col text-black col-span-1 row-span-1'>
+          <div key={product._id} className='flex flex-col text-black col-span-1 row-span-1 items-center'>
             <Link to={`/product/${product._id}`}>
               <img className='product-image' src={product.image} alt={product._id} />
             </Link>
