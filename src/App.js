@@ -22,7 +22,7 @@ const App = () => {
         <NavBar />
         <div className="h-screen mt-10">
           <Route exact path='/' component={Products}></Route>
-          <Route path='/products' component={CRUDProduct}></Route>
+          <Route path='/CRUDProduct' component={CRUDProduct}></Route>
           <Route path="/profile" component={UserProfile} />
           <Route path='/shipping' component={ShippingAddress}></Route>
           <Route path='/payment' component={Payment}></Route>

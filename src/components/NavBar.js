@@ -21,7 +21,7 @@ const NavBar = (props) => {
             userInfo && userInfo.isAdmin ?
             (
               <div className='link-hover-color px-10'>
-                <Link to='/products'>Create/Edit</Link>
+                <Link to='/CRUDProduct'>Create/Edit</Link>
               </div>
             ) :
             null
