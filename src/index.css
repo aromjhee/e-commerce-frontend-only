@@ -21,6 +21,10 @@
   transition: transform .2s;
 }
 
+.width-25rem {
+  width: 25rem;
+}
+
 .product-image:hover {
   transform: scale(1.02);
 }

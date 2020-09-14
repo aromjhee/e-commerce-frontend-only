@@ -30,12 +30,12 @@ const Products = () => {
             <Link to={`/product/${product._id}`}>
               <img className='product-image' src={product.image} alt={product._id} />
             </Link>
-            <div className='link-hover-color font-medium' id='product-name'>
+            <div className='link-hover-color font-medium width-25rem' id='product-name'>
               <Link to={`/product/${product._id}`}>{product.name}</Link>
             </div>
-            <div className='text-base text-gray-600 font-thin' id='product-brand'>{product.brand}</div>
-            <div id='product-price'>${product.price}</div>
-            <Rating name="disabled" value={product.rating} disabled />
+            <div className='text-base text-gray-600 font-thin width-25rem' id='product-brand'>{product.brand}</div>
+            <div id='product-price' className='width-25rem'>${product.price}</div>
+            <Rating name="disabled" value={product.rating} disabled className='width-25rem' />
           </div>
         ))}
       </div>
