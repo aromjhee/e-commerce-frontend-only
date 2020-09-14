@@ -36,7 +36,7 @@ const Cart = props => {
       <button className='bg-gray-400 hover:bg-gray-500 text-gray-700 font-bold py-2 px-4 rounded-lg ml-10 mb-10 inline-flex items-center text-sm'>
         <Link to='/'>Continue Shopping</Link>
       </button>
-      <div className='flex'>
+      <div className='flex justify-center'>
         {
           cartItems.length === 0 ? (
             <div className='text-gray-700 w-1/2 m-auto'>
@@ -45,7 +45,7 @@ const Cart = props => {
               </div>
             </div>
           ) : (
-            <div className='flex flex-col'>
+              <div className='flex flex-col'>
               {cartItems.map(item => (
                 <div key={item.name} className='flex items-center border border-indigo-200 rounded-lg ml-10 mb-2 p-2 justify-around cart-row-width text-gray-700 h-24'>
                   <Link to={`/product/${item.product}`}>
