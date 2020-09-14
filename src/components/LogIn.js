@@ -15,9 +15,9 @@ const LogIn = props => {
   
   useEffect(() => {
     if (userInfo) {
-      props.history.push('/');
+      props.history.push(redirect);
     }
-  }, [userInfo, props.history]);
+  }, [userInfo, props.history, redirect]);
 
   const submitHandler = e => {
     if (e) {
