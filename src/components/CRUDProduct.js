@@ -154,16 +154,16 @@ const CRUDProduct = () => {
             </div>
           </form>
         }        
-        <div className='text-gray-800 rounded border-b border-gray-200 mx-20'>
+        <div className='text-gray-800 rounded border border-gray-800 mx-20'>
           <table className='w-full'>
-            <thead className='bg-gray-800 text-white'>
+            <thead className='bg-blue-600 text-white'>
               <tr>
                 <th className='text-left py-3 px-4 font-semibold text-sm'>ID</th>
                 <th className='text-left py-3 px-4 font-semibold text-sm'>Name</th>
                 <th className='text-left py-3 px-4 font-semibold text-sm'>Price</th>
                 <th className='text-left py-3 px-4 font-semibold text-sm'>Category</th>
                 <th className='text-left py-3 px-4 font-semibold text-sm'>Brand</th>
-                <th className='text-center py-3 px-4 font-semibold text-sm text-red-200'>NOTE: Delete button disabled</th>
+                <th className='text-center py-3 px-4 font-semibold text-sm text-red-300'>NOTE: Delete button disabled</th>
               </tr>
             </thead>
             <tbody className='text-gray-700'>
