@@ -94,7 +94,7 @@ const ProductDetail = props => {
             </div>
             <div className='my-2 ml-1 text-gray-700 font-bold text-sm'>
               Description:
-              <div className='my-1 text-gray-800 font-normal text-lg'>
+              <div className='my-1 text-gray-800 font-normal text-lg w-2/3'>
                 {product.description}
               </div>
             </div>
