@@ -61,8 +61,8 @@ const CRUDProduct = () => {
       <div className='text-gray-800 m-1'>
         <div className=''>
           <button 
-            onClick={() => openModal({})}
-            className='text-white bg-red-500 p-2 text-lg rounded-lg mb-4 font-semibold'>
+            onClick={() => openModal({name: '', price: 0, image: '', brand: '', category: '', countInStock: 0, description: ''})}
+            className='text-white bg-red-500 p-2 text-lg rounded-lg mb-16 ml-20 font-semibold'>
               Create New Product
           </button>
         </div>
@@ -75,7 +75,7 @@ const CRUDProduct = () => {
             <div className='mb-4'>
               <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='name'>Name</label>
               <input 
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                 type="text" 
                 name='name' 
                 id='name' 
@@ -154,8 +154,8 @@ const CRUDProduct = () => {
             </div>
           </form>
         }        
-        <div className='text-gray-800 rounded border-b border-gray-200'>
-          <table className='w-screen'>
+        <div className='text-gray-800 rounded border-b border-gray-200 mx-20'>
+          <table className='w-full'>
             <thead className='bg-gray-800 text-white'>
               <tr>
                 <th className='text-left py-3 px-4 font-semibold text-sm'>ID</th>
@@ -163,7 +163,7 @@ const CRUDProduct = () => {
                 <th className='text-left py-3 px-4 font-semibold text-sm'>Price</th>
                 <th className='text-left py-3 px-4 font-semibold text-sm'>Category</th>
                 <th className='text-left py-3 px-4 font-semibold text-sm'>Brand</th>
-                <th className='text-left py-3 px-4 font-semibold text-sm text-red-200'>NOTE: Delete button disabled</th>
+                <th className='text-center py-3 px-4 font-semibold text-sm text-red-200'>NOTE: Delete button disabled</th>
               </tr>
             </thead>
             <tbody className='text-gray-700'>
@@ -174,7 +174,7 @@ const CRUDProduct = () => {
                 <td className='text-left py-3 px-4'>{product.price}</td>
                 <td className='text-left py-3 px-4'>{product.category}</td>
                 <td className='text-left py-3 px-4'>{product.brand}</td>
-                <td className='text-left py-3 px-4'>
+                <td className='text-center py-3 px-4'>
                   <button 
                     onClick={() => openModal(product)}
                     className='text-white bg-orange-500 p-4 py-1 text-sm rounded mr-2 font-semibold'>
@@ -182,7 +182,8 @@ const CRUDProduct = () => {
                   </button>
                   <button 
                     onClick={() => deleteHandler(product)}
-                    className='text-white bg-red-500 px-4 py-1 text-sm rounded mx-2 font-semibold cursor-not-allowed'>
+                    className='text-white bg-red-500 px-4 py-1 text-sm rounded mx-2 font-semibold cursor-not-allowed'
+                    disabled={true}>
                       Delete
                   </button>
                 </td>
