@@ -6,7 +6,8 @@ import Rating from '@material-ui/lab/Rating';
 
 const Products = () => {
   const productList = useSelector(state => state.productList);
-  const { products, loading, error } = productList;
+  // const { products, loading, error } = productList;
+  const { products } = productList;
   const dispatch = useDispatch();
 
   useEffect(() => {
