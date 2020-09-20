@@ -24,6 +24,10 @@ const Cart = props => {
     props.history.push('/log-in?redirect=shipping');
   }
 
+  const handleClick = e => {
+    props.history.push('/')
+  }
+
   useEffect(() => {
     if (id) {
       dispatch(addToCart(id, qty));
@@ -33,8 +37,8 @@ const Cart = props => {
   return (
     <div>
       <h3 className='text-3xl text-gray-700 mb-10 ml-10' id='shopping-cart'>Shopping Cart</h3>
-      <button className='bg-gray-400 hover:bg-gray-500 text-gray-700 font-bold py-2 px-4 rounded-lg ml-10 mb-10 inline-flex items-center text-sm'>
-        <Link to='/'>Continue Shopping</Link>
+      <button className='bg-gray-400 hover:bg-gray-500 text-gray-700 font-bold py-2 px-4 rounded-lg ml-10 mb-10 inline-flex items-center text-sm' onClick={handleClick}>
+        Continue Shopping
       </button>
       <div className='flex justify-center'>
         {
