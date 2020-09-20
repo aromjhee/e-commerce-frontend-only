@@ -14,17 +14,17 @@ const Products = () => {
   }, [dispatch])
 
   return (
-    loading ? (
-      <div className='text-2xl flex justify-center items-center h-full w-full text-black'>
-        Loading...
-      </div>
-    ) :
-    error ? (
-      <div className='text-2xl flex h-full w-full text-black'>
-        {error}
-      </div>
-    ) : (
-      <div className='grid grid-cols-3 grid-rows-1 gap-8 flex flex-wrap px-10'>
+    // loading ? (
+    //   <div className='text-2xl m-10 flex justify-center text-black'>
+    //     Loading...
+    //   </div>
+    // ) :
+    // error ? (
+    //   <div className='text-2xl flex h-full w-full text-black'>
+    //     {error}
+    //   </div>
+    // ) : (
+      <div className='grid grid-cols-3 grid-rows-1 gap-8 flex-wrap px-10'>
         {products.map(product => (
           <div key={product._id} className='flex flex-col text-black col-span-1 row-span-1 items-center'>
             <Link to={`/product/${product._id}`}>
@@ -39,7 +39,7 @@ const Products = () => {
           </div>
         ))}
       </div>
-    )
+    // )
   )
 }
 

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Rating from '@material-ui/lab/Rating';
 
 import { detailsProducts } from '../actions/productActions';
 
 const ProductDetail = props => {
-  const [qty, setQty] = useState(1);
-
   const productDetails = useSelector(state => state.productDetails);
   const { product, loading, error } = productDetails;
   const dispatch = useDispatch();
+
+  const [qty, setQty] = useState(1);
+
   // couldn't get test to pass when using useParams from react-router-dom
   // const { id } = useParams();
   const id = props.match.params.id;
@@ -23,17 +23,21 @@ const ProductDetail = props => {
     props.history.push(`/cart/${id}?qty=${qty}`)
   }
 
+  const handleClick = e => {
+    props.history.push('/')
+  }
+
   return (
     <>
-      <button className='bg-gray-400 hover:bg-gray-500 text-gray-700 font-bold py-2 px-4 rounded-lg ml-4 mb-10 inline-flex items-center text-sm' id='back-to-button'>
-        <Link to='/'>Back to Products</Link>
+      <button className='bg-gray-400 hover:bg-gray-500 text-gray-700 font-bold py-2 px-4 rounded-lg ml-4 mb-10 inline-flex items-center text-sm' id='back-to-button' onClick={handleClick}>
+        Back to Products
       </button>
       {
-        loading ? (
-          <div className='text-2xl flex justify-center items-center h-full w-full text-black'>Loading...</div>
-        ) : error ? (
-          <div className='text-2xl flex h-full w-full text-black'>{error}</div>
-        ) : (
+        // loading ? (
+        //   <div className='text-2xl flex justify-center text-black'>Loading...</div>
+        // ) : error ? (
+        //   <div className='text-2xl flex h-full w-full text-black'>{error}</div>
+        // ) : (
         <div className='p-4'>
           <div className='grid grid-cols-4'>
             <img 
@@ -100,7 +104,8 @@ const ProductDetail = props => {
             </div>
           </div>
         </div>
-      )}
+      // )
+      }
     </>
   )
 }

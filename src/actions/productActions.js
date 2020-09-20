@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'development') {
 
 const listProducts = () => async dispatch => {
   try {
-    dispatch({ type: PRODUCT_LIST_REQUEST});
+    // dispatch({ type: PRODUCT_LIST_REQUEST});
     const res = await fetch(`${url}/api/products`);
     if (res.ok) {
       const data = await res.json();
@@ -63,7 +63,7 @@ const saveProduct = product => async (dispatch, getState) => {
 
 const detailsProducts = (productId) => async dispatch => {
   try {
-    dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });
+    // dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });
     const res = await fetch(`${url}/api/products/${productId}`);
     if (res.ok) {
       const data = await res.json();
