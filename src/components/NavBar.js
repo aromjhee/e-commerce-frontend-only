@@ -5,8 +5,10 @@ import { useSelector } from 'react-redux';
 const NavBar = (props) => {
   const userLogin = useSelector(state => state.userLogin);
   const { userInfo } = userLogin;
+  
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart;
+  
   const id = cartItems.map(x => x.product)[0] ? cartItems.map(x => x.product)[0] : 1
   const qty = cartItems.map(x => x.qty)[0] ? cartItems.map(x => x.qty)[0] : 1;
   

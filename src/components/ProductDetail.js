@@ -6,8 +6,8 @@ import { detailsProducts } from '../actions/productActions';
 
 const ProductDetail = props => {
   const productDetails = useSelector(state => state.productDetails);
-  // const { product, loading, error } = productDetails;
-  const { product } = productDetails;
+  const { product, loading, error } = productDetails;
+  // const { product } = productDetails;
   const dispatch = useDispatch();
 
   const [qty, setQty] = useState(1);
@@ -34,11 +34,11 @@ const ProductDetail = props => {
         Back to Products
       </button>
       {
-        // loading ? (
-        //   <div className='text-2xl flex justify-center text-black'>Loading...</div>
-        // ) : error ? (
-        //   <div className='text-2xl flex h-full w-full text-black'>{error}</div>
-        // ) : (
+        loading ? (
+          <div className='text-2xl flex justify-center text-black'>Loading...</div>
+        ) : error ? (
+          <div className='text-2xl flex h-full w-full text-black'>{error}</div>
+        ) : (
         <div className='p-4'>
           <div className='grid grid-cols-4'>
             <img 
@@ -105,7 +105,7 @@ const ProductDetail = props => {
             </div>
           </div>
         </div>
-      // )
+      )
       }
     </>
   )
